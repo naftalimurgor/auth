@@ -1,11 +1,12 @@
 package main
 
 import (
-	"auth/internal/totp"
 	"flag"
 	"fmt"
 	"os"
 	"time"
+
+	"github.com/naftalimurgor/auth/internal/totp"
 )
 
 func main() {
