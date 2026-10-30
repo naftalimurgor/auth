@@ -14,17 +14,21 @@ func main() {
 
 func run(args []string) error {
 	if len(args) == 0 {
-		return fmt.Errorf("usage: auth <init|code> [flags]")
+		return fmt.Errorf("usage: auth <init|add|list|code> [flags]")
 	}
 
 	switch args[0] {
 	case "init":
 		return runInit(args[1:])
+	case "add":
+		return runAdd(args[1:])
+	case "list":
+		return runList(args[1:])
 	case "code":
 		return runCode(args[1:])
 	default:
 		return fmt.Errorf(
-			"unknown command %q; usage: auth <init|code> [flags]",
+			"unknown command %q; usage: auth <init|add|list|code> [flags]",
 			args[0],
 		)
 	}
